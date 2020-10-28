@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tables</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="screen">
+  
+    <nav id="navbar">
+    <header>
+      <h1> HTML Documentation </h1>
+    </header>
+    <a href="#introduction">Introduction</a>
+    <a href="#create-table">Creating a table</a>
+    <a href="#add-headers">Adding headers</a>
+    <a href="#multiple">Allowing cells to span</a>
+    <a href="#reference">Referennce</a>
+  </nav>
+  
+  <main id="main-doc">
+    
+    <section class="main-section">
+      <header id="introduction">
+        <h2>Introduction</h2>
+      </header>
+      <p>
+        A table is a structured set of data made up of rows and columns (tabular data). A table allows you to quickly and easily look up values that indicate some kind of connection between different types of data, for example a person and their age, or a day of the week, or the timetable for a local swimming pool.
+      </p>
+    </section>
+    
+    <section class="main-section">
+      <header id="create-table">
+        <h2>Let's create a table</h2>
+      </header>
+      <p>
+      <ol>
+        <li>
+          <p>
+          The content of every table is enclosed by these two tags: &lt;table&gt;&lt;/table&gt;. Add these inside the body of your HTML.
+          </p>
+        </li>
+        <li>
+          <p>
+          The smallest container inside a table is a table cell, which is created by a &lt;td> element ('td' stands for 'table data'). Add the following inside your table tags:
+          </p>
+          <pre><code><xmp><td>Hi, I'm your first cell.</td></xmp></code></pre>
+        </li>
+        <li>
+          <p>
+          If we want a row of four cells, we need to copy these tags three times. Update the contents of your table to look like so:
+          </p>
+          <pre><code><xmp><td>Hi, I'm your first cell.</td>
+<td>I'm your second cell.</td>
+<td>I'm your third cell.</td>
+<td>I'm your fourth cell.</td></xmp></code></pre>
+        </li>
+        <li>
+          <p>
+          To stop this row from growing and start placing subsequent cells on a second row, we need to use the <tr> element ('tr' stands for 'table row'). Let's investigate this now.
+          </p>
+          <pre><code><xmp><tr>
+  <td>Hi, I'm your first cell.</td>
+  <td>I'm your second cell.</td>
+  <td>I'm your third cell.</td>
+  <td>I'm your fourth cell.</td>
+</tr></xmp></code></pre>
+        </li>
+      </ol>
+      </p>
+    </section>
+    
+    <section class="main-section">
+      <header id="add-headers">
+        <h2>Adding headers with &lt;th&gt; elements</h2>
+      </header>
+      <p>
+        Now let's turn our attention to table headers — special cells that go at the start of a row or column and define the type of data that row or column contains (as an example, see the "Person" and "Age" cells in the first example shown in this article). To illustrate why they are useful, have a look at the following table example. First the source code:
+      </p>
+      <p>
+        <pre><code><xmp><table>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Knocky</td>
+    <td>Flor</td>
+    <td>Ella</td>
+    <td>Juan</td>
+  </tr>
+  <tr>
+    <td>Breed</td>
+    <td>Jack Russell</td>
+    <td>Poodle</td>
+    <td>Streetdog</td>
+    <td>Cocker Spaniel</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>16</td>
+    <td>9</td>
+    <td>10</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Owner</td>
+    <td>Mother-in-law</td>
+    <td>Me</td>
+    <td>Me</td>
+    <td>Sister-in-law</td>
+  </tr>
+  <tr>
+    <td>Eating Habits</td>
+    <td>Eats everyone's leftovers</td>
+    <td>Nibbles at food</td>
+    <td>Hearty eater</td>
+    <td>Will eat till he explodes</td>
+  </tr>
+</table></xmp></code></pre>
+      </p>
+    </section>
+    
+    <section class="main-section">
+      <header id="multiple">
+        <h2>Allowing cells to span multiple rows and columns</h2>
+      </header>
+      <p>
+        Sometimes we want cells to span multiple rows or columns. Take the following simple example, which shows the names of common animals. In some cases, we want to show the names of the males and females next to the animal name. Sometimes we don't, and in such cases we just want the animal name to span the whole table.
+
+The initial markup looks like this:
+        
+        <pre><code><xmp><table>
+  <tr>
+    <th>Animals</th>
+  </tr>
+  <tr>
+    <th>Hippopotamus</th>
+  </tr>
+  <tr>
+    <th>Horse</th>
+    <td>Mare</td>
+  </tr>
+  <tr>
+    <td>Stallion</td>
+  </tr>
+  <tr>
+    <th>Crocodile</th>
+  </tr>
+  <tr>
+    <th>Chicken</th>
+    <td>Hen</td>
+  </tr>
+  <tr>
+    <td>Rooster</td>
+  </tr>
+</table></xmp></code></pre>
+      </p>
+      <p>
+        We need a way to get "Animals", "Hippopotamus", and "Crocodile" to span across two columns, and "Horse" and "Chicken" to span downwards over two rows. Fortunately, table headers and cells have the colspan and rowspan attributes, which allow us to do just those things. Both accept a unitless number value, which equals the number of rows or columns you want spanned. For example, colspan="2" makes a cell span two columns.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+            First, make a local copy of our animals-table.html and minimal-table.css files in a new directory on your local machine. The HTML contains the same animals example as you saw above.</p></li>
+          <li><p>
+            Next, use colspan to make "Animals", "Hippopotamus", and "Crocodile" span across two columns.</p></li>
+          <li><p>
+Finally, use rowspan to make "Horse" and "Chicken" span across two rows.
+Save and open your code in a browser to see the improvement.
+            </p></li>
+        </ol>
+      </p>
+    </section>
+    
+    <section class="main-section">
+      <header id="reference">
+        <h2>Reference</h2>
+      </header>
+      <p>
+      <ul><li><p>
+        All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN</a>!
+        </p></li></ul>
+      </p>
+    </section>
+
+  </main>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Online Election</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main>
+  <header>
+    <h1 id="title">Online election</h1>
+    <p id="description">Due to Coronavirus pandemic, the elections this year are online.</p>
+  </header>
+  <form id="survey-form">
+    <label for="name">Your name:</label>
+    <input type="text" placeholder="Name" id="name"/> <br />
+    <label for="email">Your email:</label>
+    <input type="email" placeholder="Email" id="email"/> <br />
+    <label for="number">Number:</label>
+    <input type="number" placeholder="Number" min="0",  max="9999"id="number"/> <br />
+    <label for"dropdown">Region</label> 
+    <select id="dropdown">
+      <option>South</option>
+      <option>North</option>
+      <option>East</option>
+      <option>West</option>
+    </select> <br />
+    <fieldset>
+      <caption>Which of these foods do you like?</caption> <br />
+      <input type="checkbox" value="lasagna" id="lasagna">
+      <label for="lasagna">Lasagna</label>
+      <input type="checkbox" value="rice" id="rice">
+      <label for="rice">Rice</label>
+      <input type="checkbox" value="beans" id="beans">
+      <label for="beans">Beans</label>
+      <input type="checkbox" value="spaghetti" id="spaghetti">
+      <label for="spaghetti">Spaghetti</label>
+      <input type="checkbox" value="mashed_potatoes" id="mashed_potatoes">
+      <label for="mashed_potatoes">Mashed Potatoes</label>
+    </fieldset>
+    <label for="comments">Additional comments: </label> <br>
+    <textarea id="comments" rows="5"></textarea> <br />
+    <input type="submit" value="Submit"> 
+    
+  </form>
+</main>
+<!-- partial -->
+  
+</body>
+</html>
